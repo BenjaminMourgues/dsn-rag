@@ -1,0 +1,21 @@
+[project]
+name = "dsn-rag"
+version = "0.1.0"
+description = "Local RAG pipeline over the DSN cahier technique PDF, exposed to an LLM agent via MCP"
+requires-python = ">=3.11"
+dependencies = [
+    "pymupdf>=1.24",
+    "sentence-transformers>=3.0",
+    "chromadb>=0.5",
+    "mcp>=1.0",
+    "pyyaml>=6.0",
+    "torch>=2.4",
+    "rank-bm25>=0.2.2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]

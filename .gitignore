@@ -1,0 +1,6 @@
+chroma/
+data/*.pdf
+.venv/
+__pycache__/
+*.pyc
+.uv/

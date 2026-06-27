@@ -1,0 +1,70 @@
+# DSN retrieval eval. Questions + expected PHYSICAL PDF page numbers (1-indexed).
+# A question counts as a hit if any expected_page appears in the top-K results.
+# Pages verified against the rubrique full-definition pages (not bloc-opener
+# summaries on the bloc's first page, nor the appendix recap matrix at p370+).
+
+# --- Valeurs autorisées tables (highest-value retrieval targets) ---
+- question: "Quelles sont les valeurs autorisées pour le sexe d'un individu ?"
+  expected_pages: [172]
+  rubrique: S21.G00.30.005
+
+- question: "Quelles sont les valeurs autorisées du type de rémunération soumise à contributions d'Assurance chômage pour expatriés ?"
+  expected_pages: [146]
+  rubrique: S21.G00.11.009
+
+- question: "Quelles sont les natures de contrat possibles et comment les déclarer ?"
+  expected_pages: [186]
+  rubrique: S21.G00.40.007
+
+- question: "Quels sont les dispositifs de politique publique et conventionnels déclarables sur un contrat ?"
+  expected_pages: [187]
+  rubrique: S21.G00.40.008
+
+- question: "Quelles sont les valeurs autorisées pour le type d'élément de rémunération ?"
+  expected_pages: [250]
+  rubrique: S21.G00.51.011
+
+- question: "Quels sont les motifs d'arrêt de travail déclarables ?"
+  expected_pages: [270]
+  rubrique: S21.G00.60.001
+
+- question: "Quels sont les codes de cotisation possibles dans le bloc cotisation individuelle S21.G00.81 ?"
+  expected_pages: [309]
+  rubrique: S21.G00.81.001
+
+# --- Rubrique definitions (format / règles déclaratives) ---
+- question: "Comment déclarer le code postal d'un individu ?"
+  expected_pages: [173]
+  rubrique: S21.G00.30.009
+
+- question: "Comment déclarer une adresse à l'étranger, avec le code pays d'un individu ?"
+  expected_pages: [173, 146]
+  rubrique: S21.G00.30.011
+
+- question: "Comment est déclaré le NIR (numéro d'inscription au répertoire) d'un individu ?"
+  expected_pages: [170]
+  rubrique: S21.G00.30.001
+
+- question: "Qu'est-ce que la rémunération nette fiscale et comment la déclarer ?"
+  expected_pages: [245]
+  rubrique: S21.G00.50.002
+
+- question: "Comment est identifiée l'entreprise par son SIREN dans le bloc S21.G00.06 ?"
+  expected_pages: [142]
+  rubrique: S21.G00.06.001
+
+- question: "Comment est identifié un établissement par son NIC dans le bloc S21.G00.11 ?"
+  expected_pages: [145]
+  rubrique: S21.G00.11.001  # NIC ; le SIRET = SIREN (S21.G00.06.001) + NIC
+
+- question: "Comment déclarer une cotisation agrégée Urssaf ?"
+  expected_pages: [168]
+  rubrique: S21.G00.23.001
+
+- question: "Où trouver si un salarié est affilié au régime local Alsace-Moselle ?"
+  expected_pages: [191, 294]
+  rubrique: S21.G00.40.016  # contrat ; ayant-droit: S21.G00.73.001 (p294)
+
+# --- Prose / general (no single rubrique) ---
+- question: "Quelles sont les coordonnées des organismes pour les signalements d'événements (France Travail, MSA, CNAM) ?"
+  expected_pages: [10]
