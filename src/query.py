@@ -1,4 +1,8 @@
-"""Manual retrieval eval CLI.
+"""Hybrid retrieval over the persisted DSN chunks.
+
+``search()`` is the shared retrieval entry point used by the MCP server
+(``server.py``) and the eval harness (``evaluate.py``); this module also offers
+a CLI for manual inspection:
 
     uv run python -m src.query "comment déclarer le code postal d'un individu ?" --k 5
 

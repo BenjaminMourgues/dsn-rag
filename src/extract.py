@@ -3,7 +3,7 @@
 Uses PyMuPDF (fitz). Preserves 1-indexed page numbers. Two extraction modes:
 
 - ``extract_pages``: plain text per page (reading order via "text" mode).
-- ``extract_pages_blocks``: layout-aware block dump, useful for inspecting how
+- ``extract_page_blocks``: layout-aware block dump, useful for inspecting how
   tables ("valeurs autorisées") survive extraction during the Step 1 spike.
 
 Run as a script to print raw output for a sample of pages:
@@ -26,7 +26,9 @@ PDF_PATH = Path(__file__).resolve().parent.parent / "data" / "cahier-technique.p
 
 @dataclass
 class Page:
-    """One extracted page. ``number`` is 1-indexed (human page number)."""
+    """One extracted page. ``number`` is the physical 1-indexed PDF page (what
+    PyMuPDF returns), NOT the "N / 370" number printed in the page header — the
+    two differ by the ~22-page front-matter offset. All metadata uses this."""
 
     number: int
     text: str

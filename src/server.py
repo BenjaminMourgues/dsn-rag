@@ -1,7 +1,7 @@
 """MCP server exposing one tool: search_dsn(query, top_k).
 
-Returns a token-lean list of {text, page, bloc, rubrique, score} so an agent
-retrieves only the relevant chunks of the DSN cahier technique per query.
+Returns a token-lean list of {text, page, bloc, rubrique, chunk_type, score} so
+an agent retrieves only the relevant chunks of the DSN cahier technique per query.
 
 Run:  uv run python -m src.server
 """

@@ -11,6 +11,7 @@ Embeddings: BAAI/bge-m3 via sentence-transformers on the Apple Silicon GPU
 from __future__ import annotations
 
 import time
+from pathlib import Path
 
 import chromadb
 
@@ -18,7 +19,9 @@ from .chunk import chunk_document, est_tokens
 from .embed import EMBED_MODEL, load_embedder
 
 COLLECTION = "dsn_cahier_technique"
-CHROMA_DIR = "chroma"
+# Anchored to the project root so retrieval finds the store regardless of the
+# process working directory (the MCP server may be launched from anywhere).
+CHROMA_DIR = str(Path(__file__).resolve().parent.parent / "chroma")
 BATCH_SIZE = 64
 
 

@@ -10,7 +10,8 @@ Tuned to the layout observed in the Step 1 extraction spike:
   directly under the rubrique. We keep them attached to their rubrique; when a
   table is too large we split it into row-groups, repeating the heading +
   rubrique code so each piece stays self-describing.
-- Header/footer noise (date, ``N / 370``, running section title) is stripped.
+- Header/footer noise (date, ``N / 370``, running section title) and table-of-
+  contents dotted leaders are stripped.
 - Prose / matrix pages with no detectable rubrique fall back to a recursive
   character splitter so ingest never crashes.
 
