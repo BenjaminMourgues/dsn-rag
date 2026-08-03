@@ -56,12 +56,15 @@ Every chunk carries metadata: `page` (1-indexed physical PDF page), `bloc`,
 ```bash
 cd dsn-rag
 uv sync                                  # create venv + install deps
-# place the PDF at:
-#   data/cahier-technique.pdf
+mkdir -p data
+curl -o data/cahier-technique.pdf \
+  https://www.net-entreprises.fr/media/documentation/dsn-cahier-technique-2027.1.pdf
+uv run python -m src.ingest              # ~150s on M-series
 ```
 
-The PDF is **not** tracked in git (see `.gitignore`). Drop your copy at
-`data/cahier-technique.pdf` before ingesting.
+The PDF is **not** tracked in git (see `.gitignore`) — download it from
+[net-entreprises](https://www.net-entreprises.fr/media/documentation/dsn-cahier-technique-2027.1.pdf)
+to `data/cahier-technique.pdf` before ingesting.
 
 ## Usage
 
